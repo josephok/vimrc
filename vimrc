@@ -15,7 +15,7 @@ Bundle 'Valloric/YouCompleteMe'
 "flake8插件
 Plugin 'nvie/vim-flake8'
 "文件浏览
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 "tab键
 Plugin 'jistr/vim-nerdtree-tabs'
 "文件搜索
@@ -24,6 +24,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 "vim-gitgutter
 Plugin 'airblade/vim-gitgutter'
+"git插件
+"Plugin 'tpope/vim-fugitive'
 "美化JS/CSS/HTML等
 Plugin 'maksimr/vim-jsbeautify'
 "Emmet
@@ -36,6 +38,15 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 "jsdoc插件
 Plugin 'heavenshell/vim-jsdoc'
+"搜索插件
+Plugin 'mileszs/ack.vim'
+"css颜色高亮
+Plugin 'gorodinskiy/vim-coloresque'
+"markdown插件
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+"ES6
+Plugin 'isRuslan/vim-es6'
 call vundle#end()
 "安装插件
 
@@ -74,12 +85,18 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 set nu
 
 "设置字体"
-set guifont=Monospace\ 15
+set guifont=Monospace\ 14
 
 "主题
 colorscheme evening
 
-"美化JSON
-command Json execute "%!python -m json.tool"
+autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
+"自动美化js文件
+"autocmd BufWritePost *.js :call JsBeautify()
 
-autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()
+"自动美化json
+autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+
+"Ack搜索
+let g:ackprg = 'ag'
+
