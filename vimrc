@@ -17,11 +17,12 @@ Plugin 'nvie/vim-flake8'
 "文件浏览
 "Plugin 'scrooloose/nerdtree'
 "tab键
-Plugin 'jistr/vim-nerdtree-tabs'
+"Plugin 'jistr/vim-nerdtree-tabs'
 "文件搜索
 Plugin 'kien/ctrlp.vim'
 "airline插件
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 "vim-gitgutter
 Plugin 'airblade/vim-gitgutter'
 "git插件
@@ -97,6 +98,10 @@ autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
 "自动美化json
 autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
 
+" for html
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+
 "Ack搜索
 let g:ackprg = 'ag'
 
+let g:airline_powerline_fonts = 1
