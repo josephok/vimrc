@@ -22,7 +22,7 @@ Plugin 'nvie/vim-flake8'
 Plugin 'kien/ctrlp.vim'
 "airline插件
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'vim-airline/vim-airline-themes'
 "vim-gitgutter
 Plugin 'airblade/vim-gitgutter'
 "git插件
@@ -69,8 +69,8 @@ set foldlevel=99
 "\ set fileformat=unix
 
 "设置前端文件缩进
-"au FileType javascript,html,css
-    "\ setlocal tabstop=2 softtabstop=2 shiftwidth=2
+au FileType javascript,html,css
+   \ setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 "支持UTF-8编码
 set encoding=utf-8
