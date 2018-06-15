@@ -1,5 +1,6 @@
 "去掉vi的一致性
 set nocompatible
+filetype off
 
 "设置Vundle为插件管理工具
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -9,7 +10,7 @@ call vundle#begin()
 "Vundle插件
 Plugin 'gmarik/Vundle.vim'
 "Python缩进
-Plugin 'vim-scripts/indentpython.vim'
+"Plugin 'vim-scripts/indentpython.vim'
 "自动补全插件
 Bundle 'Valloric/YouCompleteMe'
 "flake8插件
@@ -48,6 +49,10 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 "ES6
 Plugin 'isRuslan/vim-es6'
+"molokai主题
+Plugin 'tomasr/molokai'
+"typescript插件
+Plugin 'HerringtonDarkholme/yats.vim'
 call vundle#end()
 "安装插件
 
@@ -70,13 +75,12 @@ set foldlevel=99
 
 "设置前端文件缩进
 au FileType javascript,html,css
-   \ setlocal tabstop=2 softtabstop=2 shiftwidth=2
+   \ setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 "支持UTF-8编码
 set encoding=utf-8
 
 "代码高亮
-let python_highlight_all=1
 syntax on
 
 "隐藏.pyc文件
@@ -86,10 +90,11 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 set nu
 
 "设置字体"
-set guifont=Monospace\ 14
+set guifont=Monospace\ 13
 
 "主题
-colorscheme evening
+"colorscheme industry
+colorscheme  molokai
 
 autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
 "自动美化js文件
@@ -105,3 +110,14 @@ autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 let g:ackprg = 'ag'
 
 let g:airline_powerline_fonts = 1
+
+set hlsearch
+command Sync execute "!./sync.sh %"
+set nowrap
+set autoread
+
+"typescript补全
+if !exists("g:ycm_semantic_triggers")
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
