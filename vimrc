@@ -53,6 +53,10 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'tomasr/molokai'
 "typescript插件
 Plugin 'HerringtonDarkholme/yats.vim'
+"tagbar
+Plugin 'majutsushi/tagbar'
+"git
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 "安装插件
 
@@ -94,7 +98,7 @@ set guifont=Monospace\ 13
 
 "主题
 "colorscheme industry
-colorscheme  molokai
+"colorscheme  molokai
 
 autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
 "自动美化js文件
@@ -124,3 +128,6 @@ let g:ycm_semantic_triggers['typescript'] = ['.']
 
 "ignore node_modules
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+"tagbar键位映射
+nmap <F8> :TagbarToggle<CR>
