@@ -53,15 +53,13 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'tomasr/molokai'
 "typescript插件
 Plugin 'HerringtonDarkholme/yats.vim'
-"tagbar
-Plugin 'majutsushi/tagbar'
 "git
 Plugin 'tpope/vim-fugitive'
 call vundle#end()
 "安装插件
 
 "文件缩进
-filetype plugin indent on 
+filetype plugin indent on
 
 "代码折叠
 set foldmethod=indent
@@ -78,8 +76,11 @@ set foldlevel=99
 "\ set fileformat=unix
 
 "设置前端文件缩进
-au FileType javascript,html,css
+au FileType javascript,html,css,xml
    \ setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
+au FileType c
+   \ setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 "支持UTF-8编码
 set encoding=utf-8
@@ -129,5 +130,8 @@ let g:ycm_semantic_triggers['typescript'] = ['.']
 "ignore node_modules
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
-"tagbar键位映射
-nmap <F8> :TagbarToggle<CR>
+"美化typescript
+command P execute "!prettier % --write"
+
+"Every time the user issues a :w command, Vim will automatically remove all trailing whitespace before saving.
+autocmd BufWritePre * %s/\s\+$//e
