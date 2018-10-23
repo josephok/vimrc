@@ -123,3 +123,7 @@ command P execute "!prettier % --write"
 
 "Every time the user issues a :w command, Vim will automatically remove all trailing whitespace before saving.
 autocmd BufWritePre * %s/\s\+$//e
+
+"ycm_extra_conf file
+let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
+
