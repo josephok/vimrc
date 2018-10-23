@@ -9,8 +9,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 "Vundle插件
 Plugin 'gmarik/Vundle.vim'
-"Python缩进
-"Plugin 'vim-scripts/indentpython.vim'
 "自动补全插件
 Bundle 'Valloric/YouCompleteMe'
 "flake8插件
@@ -64,16 +62,6 @@ filetype plugin indent on
 "代码折叠
 set foldmethod=indent
 set foldlevel=99
-
-"Python文件缩进配置
-"au BufNewFile,BufRead *.py
-"\ set tabstop=4|
-"\ set softtabstop=4|
-"\ set shiftwidth=4|
-"\ set textwidth=79|
-"\ set expandtab|
-"\ set autoindent|
-"\ set fileformat=unix
 
 "设置前端文件缩进
 au FileType javascript,html,css,xml
@@ -135,3 +123,7 @@ command P execute "!prettier % --write"
 
 "Every time the user issues a :w command, Vim will automatically remove all trailing whitespace before saving.
 autocmd BufWritePre * %s/\s\+$//e
+
+"ycm_extra_conf file
+let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
+
