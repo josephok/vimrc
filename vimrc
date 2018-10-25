@@ -6,12 +6,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe'
 "flake8插件
 Plug 'nvie/vim-flake8'
-"文件浏览
-"Plug 'scrooloose/nerdtree'
-"tab键
-"Plug 'jistr/vim-nerdtree-tabs'
-"文件搜索
-Plug 'kien/ctrlp.vim'
 "airline插件
 Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
@@ -44,6 +38,9 @@ Plug 'isRuslan/vim-es6'
 Plug 'HerringtonDarkholme/yats.vim'
 "git
 Plug 'tpope/vim-fugitive'
+"FZF
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 "安装插件结束
 call plug#end()
@@ -114,3 +111,5 @@ autocmd BufWritePre * %s/\s\+$//e
 "ycm_extra_conf file
 let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
 
+"FZF key bindings
+noremap <silent> <C-p> :Files<CR>
