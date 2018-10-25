@@ -1,60 +1,52 @@
-"去掉vi的一致性
-set nocompatible
-filetype off
-
-"设置Vundle为插件管理工具
-set rtp+=~/.vim/bundle/Vundle.vim
+"安装插件开始
+call plug#begin('~/.vim/plugged')
 
 "安装插件
-call vundle#begin()
-"Vundle插件
-Plugin 'gmarik/Vundle.vim'
 "自动补全插件
-Bundle 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 "flake8插件
-Plugin 'nvie/vim-flake8'
+Plug 'nvie/vim-flake8'
 "文件浏览
-"Plugin 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
 "tab键
-"Plugin 'jistr/vim-nerdtree-tabs'
+"Plug 'jistr/vim-nerdtree-tabs'
 "文件搜索
-Plugin 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 "airline插件
-Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 "vim-gitgutter
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 "git插件
-"Plugin 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
 "美化JS/CSS/HTML等
-Plugin 'maksimr/vim-jsbeautify'
+Plug 'maksimr/vim-jsbeautify'
 "Emmet
-Plugin 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 "editorconfig
-Plugin 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 "自动补全括号
-Plugin 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 "注释插件
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 "jsdoc插件
-Plugin 'heavenshell/vim-jsdoc'
+Plug 'heavenshell/vim-jsdoc'
 "搜索插件
-Plugin 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 "css颜色高亮
-Plugin 'gorodinskiy/vim-coloresque'
+Plug 'gorodinskiy/vim-coloresque'
 "markdown插件
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 "ES6
-Plugin 'isRuslan/vim-es6'
-"molokai主题
-Plugin 'tomasr/molokai'
+Plug 'isRuslan/vim-es6'
 "typescript插件
-Plugin 'HerringtonDarkholme/yats.vim'
+Plug 'HerringtonDarkholme/yats.vim'
 "git
-Plugin 'tpope/vim-fugitive'
-call vundle#end()
-"安装插件
+Plug 'tpope/vim-fugitive'
+
+"安装插件结束
+call plug#end()
 
 "文件缩进
 filetype plugin indent on
@@ -85,10 +77,6 @@ set nu
 "设置字体"
 set guifont=Monospace\ 13
 
-"主题
-"colorscheme industry
-"colorscheme  molokai
-
 autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
 "自动美化js文件
 "autocmd BufWritePost *.js :call JsBeautify()
@@ -105,7 +93,6 @@ let g:ackprg = 'ag'
 let g:airline_powerline_fonts = 1
 
 set hlsearch
-command Sync execute "!./sync.sh %"
 set nowrap
 set autoread
 
