@@ -42,6 +42,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+Plug 'prettier/vim-prettier'
+
 "安装插件结束
 call plug#end()
 
@@ -64,9 +66,6 @@ set encoding=utf-8
 
 "代码高亮
 syntax on
-
-"隐藏.pyc文件
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 "显示行号
 set nu
@@ -101,9 +100,6 @@ let g:ycm_semantic_triggers['typescript'] = ['.']
 
 "ignore node_modules
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-
-"美化typescript
-command P execute "!prettier % --write"
 
 "Every time the user issues a :w command, Vim will automatically remove all trailing whitespace before saving.
 autocmd BufWritePre * %s/\s\+$//e
