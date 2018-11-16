@@ -43,6 +43,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 Plug 'prettier/vim-prettier'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 "安装插件结束
 call plug#end()
@@ -59,6 +60,9 @@ au FileType javascript,html,css,xml
    \ setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 au FileType c
+   \ setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+
+au FileType go
    \ setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 "支持UTF-8编码
