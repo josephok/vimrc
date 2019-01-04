@@ -18,7 +18,8 @@ Plug 'maksimr/vim-jsbeautify'
 "Emmet
 Plug 'mattn/emmet-vim'
 "editorconfig
-Plug 'editorconfig/editorconfig-vim'
+"path: ~/.vim/.editorconfig
+"Plug 'editorconfig/editorconfig-vim'
 "自动补全括号
 Plug 'Raimondi/delimitMate'
 "注释插件
@@ -30,8 +31,8 @@ Plug 'mileszs/ack.vim'
 "css颜色高亮
 Plug 'gorodinskiy/vim-coloresque'
 "markdown插件
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
+"Plug 'godlygeek/tabular'
+"Plug 'plasticboy/vim-markdown'
 "ES6
 Plug 'isRuslan/vim-es6'
 "typescript插件
@@ -73,9 +74,6 @@ syntax on
 
 "显示行号
 set nu
-
-"设置字体"
-set guifont=Monospace\ 13
 
 autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
 "自动美化js文件
